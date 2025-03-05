@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: auto;
+}
+
+#app {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    width: 100%;
+    justify-content: center;
+}
+
+.channel {
+    flex: 0 0 80px; /* Narrower channels */
+    padding: 4px;
+    border: 1px solid #3d3d3d;
+    border-radius: 5px;
+    background-color: #030303;
+    text-align: center;
+}
+
+.channel h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.channel .pan-value {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.channel .pan-control {
+    position: relative;
+    width: 80%;
+    height: 20px; /* Reduced height */
+    background-color: #424242;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.channel .pan-control .fill-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ff9800;
+    z-index: 1;
+}
+
+.channel .pan-control .fill-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ff9800;
+    z-index: 1;
+}
+
+.channel .pan-control .handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 5px;
+    height: 100%;
+    background-color: #ff9800;
+    cursor: pointer;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.channel .mute-button {
+    width: 25px;
+    height: 25px;
+    background-color: #424242;
+    border: 1px solid #424242;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.channel .mute-button.muted {
+    background-color: #ff2222;
+}
+
+.channel .volume-value {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.channel .fader {
+    position: relative;
+    width: 5px; /* Updated width */
+    height: 120px;
+    background-color: #424242;
+    margin: 0 auto;
+    padding-bottom: 10px; /* Add padding at the bottom */
+}
+
+.channel .fader .handle {
+    position: absolute;
+    width: 25px;
+    height: 35px; /* Updated height */
+    background-color: #a39386;
+    border-radius: 10%;
+    cursor: pointer;
+    left: -10px; /* Adjust to center the handle */
+    bottom: 0; /* Start from the bottom */
+}
+
+.error {
+    color: #ff5722;
+    margin-top: 20px;
+}
